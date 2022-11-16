@@ -11,6 +11,20 @@ const STYLE = {
   margin: "auto",
 };
 
+const STYLE_LONG_TITLE = {
+  fontSize: "100%",
+  color: "orange",
+};
+
+const STYLE_PRESENTED_BY = {
+  fontSize: "70%",
+};
+
+const STYLE_PREAMBLE = {
+  fontSize: "100%",
+  color: "maroon",
+};
+
 export default function ActView({ act }) {
   return (
     <Box sx={STYLE}>
@@ -21,9 +35,9 @@ export default function ActView({ act }) {
       <Typography variant="h6">
         Act No. {act.num} of {act.year}
       </Typography>
-      <LinesView lines={act.longTitleLines} variant="body1" />
-      <LinesView lines={act.presentedByLines} variant="body2" />
-      <LinesView lines={act.preambleLines} variant="body2" />
+      <LinesView lines={act.longTitleLines} sx={STYLE_LONG_TITLE} />
+      <LinesView lines={act.presentedByLines} sx={STYLE_PRESENTED_BY} />
+      <LinesView lines={act.preambleLines} sx={STYLE_PREAMBLE} />
 
       {act.parts.map(function (part, iPart) {
         return <L0PartView key={"part-" + iPart} part={part} />;

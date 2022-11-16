@@ -1,8 +1,8 @@
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 
-import L0PartView from "../../view/molecules/L0PartView";
-import L0ScheduleView from "../../view/molecules/L0ScheduleView";
+import L0PartView from "../../view/organisms/L0PartView";
+import L0ScheduleView from "../../view/organisms/L0ScheduleView";
 import LinesView from "../../view/molecules/LinesView";
 
 const STYLE = {

@@ -1,9 +1,9 @@
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 
+import LinesView from "../../view/molecules/LinesView";
 import L0PartView from "../../view/organisms/L0PartView";
 import L0ScheduleView from "../../view/organisms/L0ScheduleView";
-import LinesView from "../../view/molecules/LinesView";
 
 const STYLE = {
   padding: 1,

@@ -1,3 +1,4 @@
+import LinesView from "../../view/molecules/LinesView";
 export default function ScheduleView({ schedule }) {
-  return "Schedule";
+  return <LinesView lines={schedule.textlines} variant="h6" />;
 }

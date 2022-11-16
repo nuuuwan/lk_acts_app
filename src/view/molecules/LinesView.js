@@ -5,12 +5,12 @@ const STYLE = {
   margin: 1,
 };
 
-export default function LinesView({ lines, variant }) {
+export default function LinesView({ lines, sx }) {
   return (
     <Box sx={STYLE}>
       {lines.map(function (line, iLine) {
         return (
-          <Typography key={"line-" + iLine} variant={variant}>
+          <Typography key={"line-" + iLine} variant="body1" sx={sx}>
             {line}
           </Typography>
         );

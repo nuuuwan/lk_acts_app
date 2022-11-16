@@ -1,15 +1,7 @@
-import MathX from "../../nonview/base/MathX";
-
-const MAX_SIG_DIGITS = 2;
 const STRING_REPLACE_LIST = [
   [" Of ", " of "],
   ["Election Presidential", "Presidential Election"],
 ];
-
-const FONT_SIZE = {
-  PCT_MIN: 60,
-  PCT_MAX: 100,
-};
 
 export default class StringX {
   static toTitleCase(str) {
@@ -28,5 +20,5 @@ export default class StringX {
       str = str.replaceAll(before, after);
     }
     return str;
-  }  
+  }
 }

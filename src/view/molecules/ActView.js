@@ -1,13 +1,14 @@
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 
-import LinesView from "../../view/molecules/LinesView";
 import L0PartView from "../../view/molecules/L0PartView";
 import L0ScheduleView from "../../view/molecules/L0ScheduleView";
+import LinesView from "../../view/molecules/LinesView";
 
 const STYLE = {
-  margin: 1,
   padding: 1,
+  maxWidth: 800,
+  margin: "auto",
 };
 
 export default function ActView({ act }) {

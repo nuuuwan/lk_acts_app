@@ -11,7 +11,7 @@ const STYLE = {
   fontWeight: "normal",
 }
 
-export default function ParagraphView({ paragraph }) {
+export default function L4SubParagraphView({ paragraph }) {
   return (
     <Box sx={STYLE_BOX}>
       <LinesView lines={paragraph.textlines} sx={STYLE} />

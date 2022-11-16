@@ -1,6 +1,6 @@
 import Box from "@mui/material/Box";
 import LinesView from "../../view/molecules/LinesView";
-import SubParagraphView from "../../view/molecules/SubParagraphView";
+import L4SubParagraphView from "../../view/molecules/L4SubParagraphView";
 
 const STYLE_BOX = {
   margin: 1,
@@ -12,13 +12,13 @@ const STYLE = {
   fontWeight: "normal",
 }
 
-export default function ParagraphView({ paragraph }) {
+export default function L3ParagraphView({ paragraph }) {
   return (
     <Box sx={STYLE_BOX}>
       <LinesView lines={paragraph.textlines} sx={STYLE} />
       {paragraph.subparagraphs ? paragraph.subparagraphs.map(
         function(subparagraph, iSubParagraph) {
-          return <SubParagraphView key={'subparagraph-' + iSubParagraph} subparagraph={subparagraph} />;
+          return <L4SubParagraphView key={'subparagraph-' + iSubParagraph} subparagraph={subparagraph} />;
         }
       ) : null}
     </Box>

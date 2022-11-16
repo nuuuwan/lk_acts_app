@@ -2,8 +2,8 @@ import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 
 import LinesView from "../../view/molecules/LinesView";
-import PartView from "../../view/molecules/PartView";
-import ScheduleView from "../../view/molecules/ScheduleView";
+import L0PartView from "../../view/molecules/L0PartView";
+import L0ScheduleView from "../../view/molecules/L0ScheduleView";
 
 const STYLE = {
   margin: 1,
@@ -25,11 +25,11 @@ export default function ActView({ act }) {
       <LinesView lines={act.preambleLines} variant="body2" />
 
       {act.parts.map(function (part, iPart) {
-        return <PartView key={"part-" + iPart} part={part} />;
+        return <L0PartView key={"part-" + iPart} part={part} />;
       })}
       {act.schedules.map(function (schedule, iSchedule) {
         return (
-          <ScheduleView key={"schedule-" + iSchedule} schedule={schedule} />
+          <L0ScheduleView key={"schedule-" + iSchedule} schedule={schedule} />
         );
       })}
     </Box>

@@ -1,6 +1,6 @@
 import Box from "@mui/material/Box";
 import LinesView from "../../view/molecules/LinesView";
-import SubSectionView from "../../view/molecules/SubSectionView";
+import L2SubSectionView from "../../view/molecules/L2SubSectionView";
 
 const STYLE_BOX = {
   margin: 1,
@@ -12,13 +12,13 @@ const STYLE = {
   fontWeight: "normal",
 }
 
-export default function SectionView({ section }) {
+export default function L1SectionView({ section }) {
   return (
     <Box sx={STYLE_BOX}>
       <LinesView lines={section.textlines} sx={STYLE} />
       {section.subsections.map(
         function(subsection, iSubSection) {
-          return <SubSectionView key={'subsection-' + iSubSection} subsection={subsection} />;
+          return <L2SubSectionView key={'subsection-' + iSubSection} subsection={subsection} />;
         }
       )}
     </Box>

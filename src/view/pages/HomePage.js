@@ -11,7 +11,7 @@ export default class HomePage extends Component {
   }
 
   async componentDidMount() {
-    const act = await Act.load("2022", "0009", "personal-data-protection");
+    const act = await Act.load("2022", "0099", "personal-data-protection");
     this.setState({ act });
   }
 

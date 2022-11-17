@@ -26,6 +26,10 @@ export default class L1Section extends AbstractActEntity {
     return this.num;
   }
 
+  get supertitle() {
+    return this.marginalNote;
+  }
+
   static fromD(d) {
     return new L1Section(
       d.section_num,

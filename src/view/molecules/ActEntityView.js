@@ -12,7 +12,7 @@ const STYLE_MARGINAL_NOTE = {
 
 const STYLE_SUBTITLE = {
   color: "gray",
-  marginLeft: 2,
+  marginLeft: 1,
 };
 
 export default function ActEntityView({ entity }) {
@@ -22,42 +22,34 @@ export default function ActEntityView({ entity }) {
   );
 
   return (
-    <Box>
-      <Grid container>
-        <Grid item sx={{ width: "85%" }}>
-          <Box sx={sx}>
-            <ShowHide
-              show={show}
-              contentBase={
-                <Box>
-                  <LinesView lines={entity.textLinesSmart} sx={sx} />
-                  {entity.subtitle ? (
-                    <Typography variant="caption" sx={STYLE_SUBTITLE}>
-                      {entity.subtitle}
-                    </Typography>
-                  ) : null}
-                </Box>
-              }
-              contentShow={
-                <Box>
-                  {entity.subEntities.map(function (subEntity, iSubEntity) {
-                    return (
-                      <ActEntityView key={iSubEntity} entity={subEntity} />
-                    );
-                  })}
-                </Box>
-              }
-            />
-          </Box>
-        </Grid>
-        <Grid item sx={{ width: "15%" }}>
-          {entity.marginalNote ? (
-            <Typography variant="caption" sx={STYLE_MARGINAL_NOTE}>
-              {entity.marginalNote}
+    <Box sx={sx}>
+      <ShowHide
+        show={show}
+        contentBase={
+          <Box>
+          {entity.supertitle ? (
+            <Typography variant="caption" sx={STYLE_SUBTITLE}>
+              {entity.supertitle}
             </Typography>
           ) : null}
-        </Grid>
-      </Grid>
+            <LinesView lines={entity.textLinesSmart} sx={sx} />
+            {entity.subtitle ? (
+              <Typography variant="caption" sx={STYLE_SUBTITLE}>
+                {entity.subtitle}
+              </Typography>
+            ) : null}
+          </Box>
+        }
+        contentShow={
+          <Box>
+            {entity.subEntities.map(function (subEntity, iSubEntity) {
+              return (
+                <ActEntityView key={iSubEntity} entity={subEntity} />
+              );
+            })}
+          </Box>
+        }
+      />
     </Box>
   );
 }

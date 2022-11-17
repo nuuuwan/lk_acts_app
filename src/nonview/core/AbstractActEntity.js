@@ -35,4 +35,8 @@ export default class AbstractActEntity {
   get subtitle() {
     return undefined;
   }
+
+  get supertitle() {
+    return undefined;
+  }
 }

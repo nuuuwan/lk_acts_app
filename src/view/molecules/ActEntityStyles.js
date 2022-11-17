@@ -35,7 +35,7 @@ export default class ActEntityStyles {
     let style = {
       color: ActEntityStyles.getColor(entity),
       fontSize: ActEntityStyles.getFontSize(entity),
-      marginLeft: 0.5,
+      marginLeft: 1.5,
       marginRight: 0.5,
       marginBottom: 0.5,
     };

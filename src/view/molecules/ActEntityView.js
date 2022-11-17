@@ -15,34 +15,45 @@ export default function ActEntityView({ entity }) {
     entity.entityTypeName === "L0Part" || entity.entityTypeName === "L0Schedule"
   );
 
+  const contentBase = (
+    <Box>
+      {entity.supertitle ? (
+        <Typography variant="caption" sx={STYLE_SUBTITLE}>
+          {entity.supertitle}
+        </Typography>
+      ) : null}
+      <LinesView lines={entity.textLinesSmart} sx={{ color: sx.color }} />
+      {entity.subtitle ? (
+        <Typography variant="caption" sx={STYLE_SUBTITLE}>
+          {entity.subtitle}
+        </Typography>
+      ) : null}
+    </Box>
+  );
+
+  const contentShow = (
+    <Box>
+      {entity.subEntities.map(function (subEntity, iSubEntity) {
+        return <ActEntityView key={iSubEntity} entity={subEntity} />;
+      })}
+    </Box>
+  );
+
+  if (show) {
+    return (
+      <Box sx={sx}>
+        {contentBase}
+        {contentShow}
+      </Box>
+    );
+  }
+
   return (
     <Box sx={sx}>
       <ShowHide
         show={show}
-        contentBase={
-          <Box>
-            {entity.supertitle ? (
-              <Typography variant="caption" sx={STYLE_SUBTITLE}>
-                {entity.supertitle}
-              </Typography>
-            ) : null}
-            <LinesView lines={entity.textLinesSmart} sx={{ color: sx.color }} />
-            {entity.subtitle ? (
-              <Typography variant="caption" sx={STYLE_SUBTITLE}>
-                {entity.subtitle}
-              </Typography>
-            ) : null}
-          </Box>
-        }
-        contentShow={
-          entity.subEntities.length > 0 ? (
-            <Box>
-              {entity.subEntities.map(function (subEntity, iSubEntity) {
-                return <ActEntityView key={iSubEntity} entity={subEntity} />;
-              })}
-            </Box>
-          ) : null
-        }
+        contentBase={contentBase}
+        contentShow={contentShow}
       />
     </Box>
   );

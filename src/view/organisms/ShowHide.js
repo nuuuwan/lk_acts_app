@@ -24,24 +24,18 @@ export default class ShowHide extends Component {
     const { contentBase, contentShow } = this.props;
 
     return (
-      <Stack direction="row" alignItems="top">
+      <Stack direction="row">
         <Box>
           <Box>{contentBase}</Box>
-          {contentShow ? (
-            show ? (
-              <>
-                <IconButton onClick={this.onClick.bind(this)} size="small">
-                  <ExpandLessIcon />
-                </IconButton>
-                {contentShow}
-              </>
-            ) : (
-              <IconButton onClick={this.onClick.bind(this)} size="small">
-                <ExpandMoreIcon />
-              </IconButton>
-            )
-          ) : null}
+          {show ? contentShow : null}
         </Box>
+        <IconButton
+          onClick={this.onClick.bind(this)}
+          size="small"
+          sx={{ height: 32 }}
+        >
+          {show ? <ExpandLessIcon /> : <ExpandMoreIcon />}
+        </IconButton>
       </Stack>
     );
   }

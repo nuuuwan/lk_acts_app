@@ -21,11 +21,11 @@ export default function ActEntityView({ entity }) {
         show={show}
         contentBase={
           <Box>
-          {entity.supertitle ? (
-            <Typography variant="caption" sx={STYLE_SUBTITLE}>
-              {entity.supertitle}
-            </Typography>
-          ) : null}
+            {entity.supertitle ? (
+              <Typography variant="caption" sx={STYLE_SUBTITLE}>
+                {entity.supertitle}
+              </Typography>
+            ) : null}
             <LinesView lines={entity.textLinesSmart} />
             {entity.subtitle ? (
               <Typography variant="caption" sx={STYLE_SUBTITLE}>
@@ -37,9 +37,7 @@ export default function ActEntityView({ entity }) {
         contentShow={
           <Box>
             {entity.subEntities.map(function (subEntity, iSubEntity) {
-              return (
-                <ActEntityView key={iSubEntity} entity={subEntity} />
-              );
+              return <ActEntityView key={iSubEntity} entity={subEntity} />;
             })}
           </Box>
         }

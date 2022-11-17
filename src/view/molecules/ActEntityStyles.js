@@ -40,12 +40,16 @@ export default class ActEntityStyles {
       marginBottom: 1,
     };
 
-    if (entity.entityTypeName === "L0Part" || entity.entityTypeName === "L0Schedule"|| entity.entityTypeName === "L1Section") {
+    if (
+      entity.entityTypeName === "L0Part" ||
+      entity.entityTypeName === "L0Schedule" ||
+      entity.entityTypeName === "L1Section"
+    ) {
       style = {
         ...style,
         ...{
           borderRadius: "12px",
-          background: 'rgba(0,0,0,0.01)',
+          background: "rgba(0,0,0,0.01)",
           padding: 1,
         },
       };

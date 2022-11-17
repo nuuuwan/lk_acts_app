@@ -14,8 +14,8 @@ const THEME = createTheme({
     },
   },
   typography: {
-    fontFamily: ["Figtree", "sans-serif"].join(","),
-    fontSize: 14,
+    fontFamily: ["Dosis", "sans-serif"].join(","),
+    fontSize: 13,
   },
 });
 

@@ -35,17 +35,17 @@ export default class ActEntityStyles {
     let style = {
       color: ActEntityStyles.getColor(entity),
       fontSize: ActEntityStyles.getFontSize(entity),
-      marginLeft: 1.5,
-      marginRight: 0.5,
-      marginBottom: 0.5,
+      marginLeft: 2,
+      marginRight: 1,
+      marginBottom: 1,
     };
 
-    if (entity.entityTypeName === "L1Section") {
+    if (entity.entityTypeName === "L0Part" || entity.entityTypeName === "L0Schedule"|| entity.entityTypeName === "L1Section") {
       style = {
         ...style,
         ...{
           borderRadius: "12px",
-          background: "#f8f8f8",
+          background: 'rgba(0,0,0,0.01)',
           padding: 1,
         },
       };

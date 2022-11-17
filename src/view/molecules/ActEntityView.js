@@ -1,18 +1,12 @@
 import Box from "@mui/material/Box";
-import Grid from "@mui/material/Grid";
 import Typography from "@mui/material/Typography";
 
 import ActEntityStyles from "../../view/molecules/ActEntityStyles";
 import LinesView from "../../view/molecules/LinesView";
 import ShowHide from "../../view/organisms/ShowHide";
 
-const STYLE_MARGINAL_NOTE = {
-  color: "orange",
-};
-
 const STYLE_SUBTITLE = {
   color: "gray",
-  marginLeft: 1,
 };
 
 export default function ActEntityView({ entity }) {
@@ -32,7 +26,7 @@ export default function ActEntityView({ entity }) {
               {entity.supertitle}
             </Typography>
           ) : null}
-            <LinesView lines={entity.textLinesSmart} sx={sx} />
+            <LinesView lines={entity.textLinesSmart} />
             {entity.subtitle ? (
               <Typography variant="caption" sx={STYLE_SUBTITLE}>
                 {entity.subtitle}

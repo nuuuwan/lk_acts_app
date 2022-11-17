@@ -26,7 +26,7 @@ export default function ActEntityView({ entity }) {
                 {entity.supertitle}
               </Typography>
             ) : null}
-            <LinesView lines={entity.textLinesSmart} />
+            <LinesView lines={entity.textLinesSmart} sx={{ color: sx.color }} />
             {entity.subtitle ? (
               <Typography variant="caption" sx={STYLE_SUBTITLE}>
                 {entity.subtitle}

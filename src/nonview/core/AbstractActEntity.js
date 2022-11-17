@@ -6,4 +6,8 @@ export default class AbstractActEntity {
   get entityTypeName() {
     return "AbstractActEntity";
   }
+
+  get textLinesSmart() {
+    return this.textLines;
+  }
 }

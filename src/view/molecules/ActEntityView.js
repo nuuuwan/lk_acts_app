@@ -6,8 +6,9 @@ import LinesView from "../../view/molecules/LinesView";
 import ShowHide from "../../view/organisms/ShowHide";
 
 const STYLE_BOX = {
-  margin: 1,
-  padding: 1,  
+  margin: 0,
+  padding: 0,
+  marginLeft: 3,
 };
 
 export default function ActEntityView({ entity }) {
@@ -23,7 +24,7 @@ export default function ActEntityView({ entity }) {
         contentBase={
           <Box>
             {entity.marginalNote ? (
-              <Typography variant="caption">{entity.marginalNote}</Typography>
+              <Typography variant="caption" sx={{color: sx.color, margin: 1}}>{entity.marginalNote}</Typography>
             ) : null}
             <LinesView lines={entity.textLines} sx={sx} />
           </Box>

@@ -1,10 +1,6 @@
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 
-const STYLE = {
-  margin: 1,
-};
-
 export default function LinesView({ lines, sx }) {
   let line = lines.join(" ");
   if (!line) {
@@ -12,7 +8,7 @@ export default function LinesView({ lines, sx }) {
   }
   lines = [line];
   return (
-    <Box sx={STYLE}>
+    <Box>
       {lines.map(function (line, iLine) {
         return (
           <Typography key={"line-" + iLine} variant="body1" sx={sx}>

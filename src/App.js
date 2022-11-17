@@ -14,7 +14,7 @@ const THEME = createTheme({
     },
   },
   typography: {
-    fontFamily: ["Dosis", "sans-serif"].join(","),
+    fontFamily: ["Assistant", "sans-serif"].join(","),
     fontSize: 13,
   },
 });

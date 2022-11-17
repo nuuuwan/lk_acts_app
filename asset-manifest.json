@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/lk_acts_app/static/css/main.768588a0.css",
-    "main.js": "/lk_acts_app/static/js/main.031ef7ea.js",
+    "main.js": "/lk_acts_app/static/js/main.2eec0a8d.js",
     "static/js/787.fa910559.chunk.js": "/lk_acts_app/static/js/787.fa910559.chunk.js",
     "index.html": "/lk_acts_app/index.html",
     "main.768588a0.css.map": "/lk_acts_app/static/css/main.768588a0.css.map",
-    "main.031ef7ea.js.map": "/lk_acts_app/static/js/main.031ef7ea.js.map",
+    "main.2eec0a8d.js.map": "/lk_acts_app/static/js/main.2eec0a8d.js.map",
     "787.fa910559.chunk.js.map": "/lk_acts_app/static/js/787.fa910559.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.768588a0.css",
-    "static/js/main.031ef7ea.js"
+    "static/js/main.2eec0a8d.js"
   ]
 }

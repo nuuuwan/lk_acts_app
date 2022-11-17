@@ -4,39 +4,42 @@ import Typography from "@mui/material/Typography";
 import LinesView from "../../view/molecules/LinesView";
 import ShowHide from "../../view/organisms/ShowHide";
 
-const STYLE_PRESENTED_BY = {
+const STYLE_PRE_CONTENT = {
   fontSize: "70%",
-};
-
-const STYLE_PREAMBLE = {
-  fontSize: "100%",
-  color: "maroon",
-};
-
-const STYLE_LONG_TITLE = {
-  fontSize: "100%",
-  color: "orange",
+  color: "gray",
 };
 
 export default function ActPreContentView({ act }) {
   return (
     <Box>
       <ShowHide
-        contentBase={<Typography variante="h6">Long Title</Typography>}
+        contentBase={
+          <Typography variant="body2" sx={STYLE_PRE_CONTENT}>
+            Long Title
+          </Typography>
+        }
         contentShow={
-          <LinesView lines={act.longTitleLines} sx={STYLE_LONG_TITLE} />
+          <LinesView lines={act.longTitleLines} sx={STYLE_PRE_CONTENT} />
         }
       />
       <ShowHide
-        contentBase={<Typography variante="h6">Presented by</Typography>}
+        contentBase={
+          <Typography variant="body2" sx={STYLE_PRE_CONTENT}>
+            Presented by
+          </Typography>
+        }
         contentShow={
-          <LinesView lines={act.presentedByLines} sx={STYLE_PRESENTED_BY} />
+          <LinesView lines={act.presentedByLines} sx={STYLE_PRE_CONTENT} />
         }
       />
       <ShowHide
-        contentBase={<Typography variante="h6">Preamble</Typography>}
+        contentBase={
+          <Typography variant="body2" sx={STYLE_PRE_CONTENT}>
+            Preamble
+          </Typography>
+        }
         contentShow={
-          <LinesView lines={act.preambleLines} sx={STYLE_PREAMBLE} />
+          <LinesView lines={act.preambleLines} sx={STYLE_PRE_CONTENT} />
         }
       />
     </Box>

@@ -1,10 +1,12 @@
 import { Component } from "react";
+
 import Box from "@mui/material/Box";
 import CircularProgress from "@mui/material/CircularProgress";
+
 import Act from "../../nonview/core/Act";
-import CustomBottomNavigation from "../../view/molecules/CustomBottomNavigation";
 
 import ActView from "../../view/molecules/ActView";
+import CustomBottomNavigation from "../../view/molecules/CustomBottomNavigation";
 
 export default class HomePage extends Component {
   constructor(props) {
@@ -20,7 +22,7 @@ export default class HomePage extends Component {
   renderInner() {
     const { act } = this.state;
     if (!act) {
-      return <CircularProgress  />;
+      return <CircularProgress />;
     }
 
     return <ActView act={act} />;
@@ -32,6 +34,6 @@ export default class HomePage extends Component {
         {this.renderInner()}
         <CustomBottomNavigation />
       </Box>
-    )
+    );
   }
 }

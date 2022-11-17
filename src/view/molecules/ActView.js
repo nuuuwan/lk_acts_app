@@ -1,9 +1,8 @@
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 
+import ActEntityView from "../../view/molecules/ActEntityView";
 import LinesView from "../../view/molecules/LinesView";
-import L0PartView from "../../view/organisms/L0PartView";
-import L0ScheduleView from "../../view/organisms/L0ScheduleView";
 
 const STYLE = {
   padding: 1,
@@ -40,11 +39,11 @@ export default function ActView({ act }) {
       <LinesView lines={act.preambleLines} sx={STYLE_PREAMBLE} />
 
       {act.parts.map(function (part, iPart) {
-        return <L0PartView key={"part-" + iPart} part={part} />;
+        return <ActEntityView key={"part-" + iPart} entity={part} />;
       })}
       {act.schedules.map(function (schedule, iSchedule) {
         return (
-          <L0ScheduleView key={"schedule-" + iSchedule} schedule={schedule} />
+          <ActEntityView key={"schedule-" + iSchedule} entity={schedule} />
         );
       })}
     </Box>

@@ -9,6 +9,14 @@ export default class L0Part extends AbstractActEntity {
     this.sections = sections;
   }
 
+  get subEntities() {
+    return this.sections;
+  }
+
+  get entityTypeName() {
+    return "L0Part";
+  }
+
   static fromD(d) {
     return new L0Part(
       d.part_num,

@@ -10,6 +10,14 @@ export default class L1Section extends AbstractActEntity {
     this.subSections = subSections;
   }
 
+  get subEntities() {
+    return this.subSections;
+  }
+
+  get entityTypeName() {
+    return "L1Section";
+  }
+
   static fromD(d) {
     return new L1Section(
       d.section_num,

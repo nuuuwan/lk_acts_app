@@ -9,6 +9,14 @@ export default class L0Schedule extends AbstractActEntity {
     this.sections = sections;
   }
 
+  get subEntities() {
+    return this.sections;
+  }
+
+  get entityTypeName() {
+    return "L0Schedule";
+  }
+
   static fromD(d) {
     return new L0Schedule(
       d.schedule_num,

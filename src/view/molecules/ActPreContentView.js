@@ -5,9 +5,15 @@ import LinesView from "../../view/molecules/LinesView";
 import ShowHide from "../../view/organisms/ShowHide";
 
 const STYLE_PRE_CONTENT = {
-  fontSize: "70%",
+  fontSize: "90%",
   color: "gray",
 };
+
+const STYLE_PRE_CONTENT_INNER = {
+  fontSize: "70%",
+  color: "gray",
+  marginLeft: 1,
+}
 
 export default function ActPreContentView({ act }) {
   return (
@@ -19,7 +25,7 @@ export default function ActPreContentView({ act }) {
           </Typography>
         }
         contentShow={
-          <LinesView lines={act.longTitleLines} sx={STYLE_PRE_CONTENT} />
+          <LinesView lines={act.longTitleLines} sx={STYLE_PRE_CONTENT_INNER} />
         }
       />
       <ShowHide
@@ -29,7 +35,7 @@ export default function ActPreContentView({ act }) {
           </Typography>
         }
         contentShow={
-          <LinesView lines={act.presentedByLines} sx={STYLE_PRE_CONTENT} />
+          <LinesView lines={act.presentedByLines} sx={STYLE_PRE_CONTENT_INNER} />
         }
       />
       <ShowHide
@@ -39,7 +45,7 @@ export default function ActPreContentView({ act }) {
           </Typography>
         }
         contentShow={
-          <LinesView lines={act.preambleLines} sx={STYLE_PRE_CONTENT} />
+          <LinesView lines={act.preambleLines} sx={STYLE_PRE_CONTENT_INNER} />
         }
       />
     </Box>

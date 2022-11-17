@@ -37,7 +37,7 @@ export default class ActEntityStyles {
       fontSize: ActEntityStyles.getFontSize(entity),
       marginLeft: 2,
       marginRight: 0.5,
-      marginBottom: 0.5,
+      marginBottom: 1,
     };
 
     if (

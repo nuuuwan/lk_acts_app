@@ -6,6 +6,7 @@ const STYLE = {
 };
 
 export default function LinesView({ lines, sx }) {
+  lines = [lines.join(' ')];
   return (
     <Box sx={STYLE}>
       {lines.map(function (line, iLine) {

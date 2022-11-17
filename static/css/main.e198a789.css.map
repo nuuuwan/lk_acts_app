@@ -1,1 +1,0 @@
-{"version":3,"file":"static/css/main.e198a789.css","mappings":"AAAA,KACE,aAAc,CAEd,sBAAuB,CADvB,WAEF","sources":["index.css"],"sourcesContent":["body {\n  maxwidth: 1000;\n  margin: auto;\n  font-family: sans-serif;\n}\n"],"names":[],"sourceRoot":""}

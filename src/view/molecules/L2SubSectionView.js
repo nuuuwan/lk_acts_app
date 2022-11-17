@@ -13,12 +13,12 @@ const STYLE = {
   fontWeight: "normal",
 };
 
-export default function L2SubSectionView({ subsection }) {
+export default function L2SubSectionView({ subSection }) {
   return (
     <Box sx={STYLE_BOX}>
-      <LinesView lines={subsection.textlines} sx={STYLE} />
-      {subsection.paragraphs
-        ? subsection.paragraphs.map(function (paragraph, iParagraph) {
+      <LinesView lines={subSection.textLines} sx={STYLE} />
+      {subSection.paragraphs
+        ? subSection.paragraphs.map(function (paragraph, iParagraph) {
             return (
               <L3ParagraphView
                 key={"paragraph-" + iParagraph}

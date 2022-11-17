@@ -1,4 +1,6 @@
 import WWW from "../../nonview/base/WWW";
+import L0Part from "../../nonview/core/L0Part";
+import L0Schedule from "../../nonview/core/L0Schedule";
 
 const URL_BASE = "https://raw.githubusercontent.com/nuuuwan/lk_acts/main/data";
 export default class Act {
@@ -42,6 +44,10 @@ export default class Act {
 
   static async load(year, num, name) {
     const d = await WWW.json(Act.getURL(year, num, name));
+    return Act.fromD(d);
+  }
+
+  static fromD(d) {
     return new Act(
       d.year,
       d.num,
@@ -54,8 +60,8 @@ export default class Act {
       d.postage_lkr,
       d.date_published,
       d.preamble_lines,
-      d.parts,
-      d.schedules
+      d.parts.map((dPart) => L0Part.fromD(dPart)),
+      d.schedules.map((dSchedule) => L0Schedule.fromD(dSchedule))
     );
   }
 }

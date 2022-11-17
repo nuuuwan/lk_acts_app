@@ -28,19 +28,19 @@ export default function L1SectionView({ section }) {
     <Box sx={STYLE_BOX}>
       <Grid container spacing={1}>
         <Grid item xs={9}>
-          <LinesView lines={section.textlines} sx={STYLE} />
-          {section.subsections.map(function (subsection, iSubSection) {
+          <LinesView lines={section.textLines} sx={STYLE} />
+          {section.subSections.map(function (subSection, iSubSection) {
             return (
               <L2SubSectionView
-                key={"subsection-" + iSubSection}
-                subsection={subsection}
+                key={"subSection-" + iSubSection}
+                subSection={subSection}
               />
             );
           })}
         </Grid>
         <Grid item xs={2}>
           <Typography variant="body2" sx={STYLE_MARGINAL_NOTE}>
-            {section.marginal_note}
+            {section.marginalNote}
           </Typography>
         </Grid>
       </Grid>

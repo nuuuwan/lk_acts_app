@@ -16,13 +16,13 @@ const STYLE = {
 export default function L3ParagraphView({ paragraph }) {
   return (
     <Box sx={STYLE_BOX}>
-      <LinesView lines={paragraph.textlines} sx={STYLE} />
-      {paragraph.subparagraphs
-        ? paragraph.subparagraphs.map(function (subparagraph, iSubParagraph) {
+      <LinesView lines={paragraph.textLines} sx={STYLE} />
+      {paragraph.subParagraphs
+        ? paragraph.subParagraphs.map(function (subParagraph, iSubParagraph) {
             return (
               <L4SubParagraphView
-                key={"subparagraph-" + iSubParagraph}
-                subparagraph={subparagraph}
+                key={"subParagraph-" + iSubParagraph}
+                subParagraph={subParagraph}
               />
             );
           })

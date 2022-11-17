@@ -12,10 +12,10 @@ const STYLE = {
   fontWeight: "normal",
 };
 
-export default function L4SubParagraphView({ paragraph }) {
+export default function L4SubParagraphView({ subParagraph }) {
   return (
     <Box sx={STYLE_BOX}>
-      <LinesView lines={paragraph.textlines} sx={STYLE} />
+      <LinesView lines={subParagraph.textLines} sx={STYLE} />
     </Box>
   );
 }

@@ -35,11 +35,8 @@ export default class L0PartView extends Component {
           <VisibilityOffIcon />
         </IconButton>
         {part.sections.map(function (section, iSection) {
-          return (
-            <>
-              <L1SectionView key={"section-" + iSection} section={section} />
-            </>
-          );
+          const key = "part" + part.partNum + "-" + iSection;
+          return <L1SectionView key={key} section={section} />;
         })}
       </>
     );
@@ -52,7 +49,7 @@ export default class L0PartView extends Component {
     }.bind(this);
 
     const textlines =
-      part.textlines.length > 0 ? part.textlines : ["PART 0 (Introduction)"];
+      part.textLines.length > 0 ? part.textLines : ["PART 0 (Introduction)"];
     return (
       <Box onClick={onClick}>
         <LinesView lines={textlines} sx={STYLE} />

@@ -1,6 +1,8 @@
 import { Component } from "react";
 
 import Box from "@mui/material/Box";
+import IconButton from "@mui/material/IconButton";
+import VisibilityOffIcon from "@mui/icons-material/VisibilityOff";
 
 import L1SectionView from "../../view/molecules/L1SectionView";
 import LinesView from "../../view/molecules/LinesView";
@@ -9,6 +11,8 @@ const STYLE = {
   color: "black",
   fontSize: "100%",
   fontWeight: "bold",
+  background: "#fcfcfc",
+  borderRadius: "12px",
 };
 
 export default class L0ScheduleView extends Component {
@@ -21,17 +25,42 @@ export default class L0ScheduleView extends Component {
 
   renderExpanded() {
     const { schedule } = this.props;
-    return schedule.sections.map(function (section, iSection) {
-      return <L1SectionView key={"section-" + iSection} section={section} />;
-    });
+    const onClick = function () {
+      this.setState({ expanded: false });
+    }.bind(this);
+
+    return (
+      <>
+        <IconButton onClick={onClick}>
+          <VisibilityOffIcon />
+        </IconButton>
+        {schedule.sections.map(function (section, iSection) {
+          const key = "schedule" + schedule.scheduleNum + "-" + iSection;
+          return <L1SectionView key={key} section={section} />;
+        })}
+      </>
+    );
+  }
+
+  renderCommon() {
+    const { schedule } = this.props;
+    const onClick = function () {
+      this.setState({ expanded: true });
+    }.bind(this);
+
+    const textlines = schedule.textLines;
+    return (
+      <Box onClick={onClick}>
+        <LinesView lines={textlines} sx={STYLE} />
+      </Box>
+    );
   }
 
   render() {
-    const { schedule } = this.props;
     const { expanded } = this.state;
     return (
-      <Box>
-        <LinesView lines={schedule.textlines} sx={STYLE} />
+      <Box sx={STYLE}>
+        {this.renderCommon()}
         {expanded ? this.renderExpanded() : null}
       </Box>
     );

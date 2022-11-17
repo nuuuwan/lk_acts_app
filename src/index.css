@@ -1,5 +1,5 @@
 body {
-  maxwidth: 800px;
-  margin: auto;
+  max-width: 800px;
+  margin: 32px;
   font-family: sans-serif;
 }

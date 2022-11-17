@@ -17,6 +17,14 @@ export default class L0Schedule extends AbstractActEntity {
     return "L0Schedule";
   }
 
+  get num() {
+    return this.scheduleNum;
+  }
+
+  get numFormatted() {
+    return "SCHEDULE " + this.num;
+  }
+
   static fromD(d) {
     return new L0Schedule(
       d.schedule_num,

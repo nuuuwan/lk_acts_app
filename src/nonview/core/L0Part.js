@@ -17,6 +17,14 @@ export default class L0Part extends AbstractActEntity {
     return "L0Part";
   }
 
+  get num() {
+    return this.partNum;
+  }
+
+  get numFormatted() {
+    return "PART " + this.num;
+  }
+
   static fromD(d) {
     return new L0Part(
       d.part_num,

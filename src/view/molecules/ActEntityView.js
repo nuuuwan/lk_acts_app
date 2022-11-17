@@ -24,7 +24,9 @@ export default function ActEntityView({ entity }) {
         contentBase={
           <Box>
             {entity.marginalNote ? (
-              <Typography variant="caption" sx={{color: sx.color, margin: 1}}>{entity.marginalNote}</Typography>
+              <Typography variant="caption" sx={{ color: sx.color, margin: 1 }}>
+                {entity.marginalNote}
+              </Typography>
             ) : null}
             <LinesView lines={entity.textLinesSmart} sx={sx} />
           </Box>

@@ -18,6 +18,14 @@ export default class L1Section extends AbstractActEntity {
     return "L1Section";
   }
 
+  get num() {
+    return this.sectionNum;
+  }
+
+  get numFormatted() {
+    return this.num;
+  }
+
   static fromD(d) {
     return new L1Section(
       d.section_num,

@@ -16,6 +16,11 @@ export default class L2SubSection extends AbstractActEntity {
   get entityTypeName() {
     return "L2SubSection";
   }
+
+  get num() {
+    return this.subSectionNum;
+  }
+
   static fromD(d) {
     return new L2SubSection(
       d.subsection_num,

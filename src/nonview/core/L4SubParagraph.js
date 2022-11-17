@@ -11,7 +11,11 @@ export default class L4SubParagraph extends AbstractActEntity {
     return "L4SubParagraph";
   }
 
+  get num() {
+    return this.subParagraphNum;
+  }
+
   static fromD(d) {
-    return new L4SubParagraph(d.subparagraph_num, d.textlines);
+    return new L4SubParagraph(d.sub_paragraph_num, d.textlines);
   }
 }

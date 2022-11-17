@@ -7,11 +7,28 @@ export default class AbstractActEntity {
     return "AbstractActEntity";
   }
 
-  get textLinesSmart() {
-    return this.textLines;
+  get num() {
+    return "";
   }
 
-  get num() {
-    return undefined;
+  get numFormatted() {
+    return "(" + this.num + ")";
+  }
+
+  get textLinesOnly() {
+    return [this.textLines.join(" ").replace(this.numFormatted, "")];
+  }
+
+  get textLinesSmart() {
+    if (this.num === "dummy") {
+      return [];
+    }
+    if (!this.num) {
+      if (this.entityTypeName === "L0Part") {
+        return ["Introduction"];
+      }
+      return ["..."];
+    }
+    return [this.numFormatted + " " + this.textLinesOnly.join(" ")];
   }
 }

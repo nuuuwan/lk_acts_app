@@ -10,6 +10,11 @@ const STYLE_MARGINAL_NOTE = {
   color: "orange",
 };
 
+const STYLE_SUBTITLE = {
+  color: "gray",
+  marginLeft: 2,
+};
+
 export default function ActEntityView({ entity }) {
   const sx = ActEntityStyles.getStyle(entity);
   const show = !(
@@ -23,7 +28,16 @@ export default function ActEntityView({ entity }) {
           <Box sx={sx}>
             <ShowHide
               show={show}
-              contentBase={<LinesView lines={entity.textLinesSmart} sx={sx} />}
+              contentBase={
+                <Box>
+                  <LinesView lines={entity.textLinesSmart} sx={sx} />
+                  {entity.subtitle ? (
+                    <Typography variant="caption" sx={STYLE_SUBTITLE}>
+                      {entity.subtitle}
+                    </Typography>
+                  ) : null}
+                </Box>
+              }
               contentShow={
                 <Box>
                   {entity.subEntities.map(function (subEntity, iSubEntity) {

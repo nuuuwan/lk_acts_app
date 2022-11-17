@@ -25,6 +25,23 @@ export default class L0Part extends AbstractActEntity {
     return "PART " + this.num;
   }
 
+  get textLinesSmart() {
+    if (!this.num) {
+      return ["Introduction"];
+    }
+    return [this.numFormatted + " - " + this.textLinesOnly.join(" ")];
+  }
+
+  get subtitle() {
+    const firstChild = this.subEntities[0];
+    const lastChild = this.subEntities[this.subEntities.length - 1];
+    const sectionStr =
+      firstChild !== lastChild
+        ? "Sections " + firstChild.sectionNum + " to " + lastChild.sectionNum
+        : "Section " + firstChild.sectionNum;
+    return sectionStr;
+  }
+
   static fromD(d) {
     return new L0Part(
       d.part_num,

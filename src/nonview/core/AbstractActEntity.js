@@ -31,4 +31,8 @@ export default class AbstractActEntity {
     }
     return [this.numFormatted + " " + this.textLinesOnly.join(" ")];
   }
+
+  get subtitle() {
+    return undefined;
+  }
 }

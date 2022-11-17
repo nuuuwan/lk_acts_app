@@ -30,10 +30,10 @@ export default class ShowHide extends Component {
           {contentShow ? (
             show ? (
               <>
-                {contentShow}
                 <IconButton onClick={this.onClick.bind(this)} size="small">
                   <ExpandLessIcon />
                 </IconButton>
+                {contentShow}                
               </>
             ) : (
               <IconButton onClick={this.onClick.bind(this)} size="small">

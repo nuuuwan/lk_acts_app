@@ -3,6 +3,7 @@ import Typography from "@mui/material/Typography";
 
 import ActEntityStyles from "../../view/molecules/ActEntityStyles";
 import LinesView from "../../view/molecules/LinesView";
+import ShowHide from "../../view/organisms/ShowHide";
 
 const STYLE_BOX = {
   margin: 1,
@@ -13,16 +14,30 @@ const STYLE_BOX = {
 
 export default function ActEntityView({ entity }) {
   const sx = ActEntityStyles.getStyle(entity);
+  const show = !(
+    entity.entityTypeName === "L0Part" || entity.entityTypeName === "L0Schedule"
+  );
 
   return (
     <Box sx={STYLE_BOX}>
-      {entity.marginalNote ? (
-        <Typography variant="caption">{entity.marginalNote}</Typography>
-      ) : null}
-      <LinesView lines={entity.textLines} sx={sx} />
-      {entity.subEntities.map(function (subEntity, iSubEntity) {
-        return <ActEntityView key={iSubEntity} entity={subEntity} />;
-      })}
+      <ShowHide
+        show={show}
+        contentBase={
+          <Box>
+            {entity.marginalNote ? (
+              <Typography variant="caption">{entity.marginalNote}</Typography>
+            ) : null}
+            <LinesView lines={entity.textLines} sx={sx} />
+          </Box>
+        }
+        contentShow={
+          <Box>
+            {entity.subEntities.map(function (subEntity, iSubEntity) {
+              return <ActEntityView key={iSubEntity} entity={subEntity} />;
+            })}
+          </Box>
+        }
+      />
     </Box>
   );
 }

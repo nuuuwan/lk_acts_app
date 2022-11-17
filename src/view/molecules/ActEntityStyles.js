@@ -36,7 +36,7 @@ export default class ActEntityStyles {
       color: ActEntityStyles.getColor(entity),
       fontSize: ActEntityStyles.getFontSize(entity),
       marginLeft: 2,
-      marginRight: 0.5,
+      marginRight: 0,
       marginBottom: 1,
       marginTop: 1,
     };

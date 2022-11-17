@@ -25,7 +25,7 @@ export default function ActPreContentView({ act }) {
           </Typography>
         }
         contentShow={
-          <LinesView lines={act.longTitleLines} sx={STYLE_PRE_CONTENT_INNER} />
+          <LinesView lines={[act.longTitle]} sx={STYLE_PRE_CONTENT_INNER} />
         }
       />
       <ShowHide
@@ -36,7 +36,7 @@ export default function ActPreContentView({ act }) {
         }
         contentShow={
           <LinesView
-            lines={act.presentedByLines}
+            lines={[act.presentedBy]}
             sx={STYLE_PRE_CONTENT_INNER}
           />
         }
@@ -48,7 +48,7 @@ export default function ActPreContentView({ act }) {
           </Typography>
         }
         contentShow={
-          <LinesView lines={act.preambleLines} sx={STYLE_PRE_CONTENT_INNER} />
+          <LinesView lines={[act.preamble]} sx={STYLE_PRE_CONTENT_INNER} />
         }
       />
     </Box>

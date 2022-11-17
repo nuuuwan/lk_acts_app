@@ -6,12 +6,12 @@ export default class ActEntityStyles {
       case "L1Section":
         return "100%";
       case "L2SubSection":
-        return "90%";
+        return "95%";
       case "L3Paragraph":
-        return "80%";
+        return "90%";
       case "L4SubParagraph":
       default:
-        return "70%";
+        return "85%";
     }
   }
 
@@ -32,10 +32,24 @@ export default class ActEntityStyles {
   }
 
   static getStyle(entity) {
-    return {
+    let style = {
       color: ActEntityStyles.getColor(entity),
       fontSize: ActEntityStyles.getFontSize(entity),
-      margin: 1,
+      marginLeft: 1.5,
+      marginRight: 1,
+      marginBottom: 0.5,
     };
+
+    if (entity.entityTypeName === "L1Section") {
+      style = {
+        ...style,
+        ...{
+          borderRadius: "12px",
+          background: "#f8f8f8",
+          padding: 1,
+        },
+      };
+    }
+    return style;
   }
 }

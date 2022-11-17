@@ -1,14 +1,13 @@
 import Box from "@mui/material/Box";
+import Grid from "@mui/material/Grid";
 import Typography from "@mui/material/Typography";
 
 import ActEntityStyles from "../../view/molecules/ActEntityStyles";
 import LinesView from "../../view/molecules/LinesView";
 import ShowHide from "../../view/organisms/ShowHide";
 
-const STYLE_BOX = {
-  margin: 0,
-  padding: 0,
-  marginLeft: 3,
+const STYLE_MARGINAL_NOTE = {
+  color: "orange",
 };
 
 export default function ActEntityView({ entity }) {
@@ -18,27 +17,33 @@ export default function ActEntityView({ entity }) {
   );
 
   return (
-    <Box sx={STYLE_BOX}>
-      <ShowHide
-        show={show}
-        contentBase={
-          <Box>
-            {entity.marginalNote ? (
-              <Typography variant="caption" sx={{ color: sx.color, margin: 1 }}>
-                {entity.marginalNote}
-              </Typography>
-            ) : null}
-            <LinesView lines={entity.textLinesSmart} sx={sx} />
+    <Box>
+      <Grid container>
+        <Grid item sx={{ width: "85%" }}>
+          <Box sx={sx}>
+            <ShowHide
+              show={show}
+              contentBase={<LinesView lines={entity.textLinesSmart} sx={sx} />}
+              contentShow={
+                <Box>
+                  {entity.subEntities.map(function (subEntity, iSubEntity) {
+                    return (
+                      <ActEntityView key={iSubEntity} entity={subEntity} />
+                    );
+                  })}
+                </Box>
+              }
+            />
           </Box>
-        }
-        contentShow={
-          <Box>
-            {entity.subEntities.map(function (subEntity, iSubEntity) {
-              return <ActEntityView key={iSubEntity} entity={subEntity} />;
-            })}
-          </Box>
-        }
-      />
+        </Grid>
+        <Grid item sx={{ width: "15%" }}>
+          {entity.marginalNote ? (
+            <Typography variant="caption" sx={STYLE_MARGINAL_NOTE}>
+              {entity.marginalNote}
+            </Typography>
+          ) : null}
+        </Grid>
+      </Grid>
     </Box>
   );
 }

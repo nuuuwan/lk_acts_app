@@ -10,4 +10,8 @@ export default class AbstractActEntity {
   get textLinesSmart() {
     return this.textLines;
   }
+
+  get num() {
+    return undefined;
+  }
 }

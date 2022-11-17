@@ -1,5 +1,5 @@
 import { Component } from "react";
-
+import CircularProgress from "@mui/material/CircularProgress";
 import Act from "../../nonview/core/Act";
 
 import ActView from "../../view/molecules/ActView";
@@ -18,7 +18,7 @@ export default class HomePage extends Component {
   render() {
     const { act } = this.state;
     if (!act) {
-      return "Loading...";
+      return <CircularProgress  />;
     }
 
     return <ActView act={act} />;

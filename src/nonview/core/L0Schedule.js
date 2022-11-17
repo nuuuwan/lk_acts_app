@@ -25,6 +25,10 @@ export default class L0Schedule extends AbstractActEntity {
     return "SCHEDULE " + this.num;
   }
 
+  get textLinesSmart() {
+    return [this.numFormatted + " - " + this.textLinesOnly.join(" ")];
+  }
+
   static fromD(d) {
     return new L0Schedule(
       d.schedule_num,

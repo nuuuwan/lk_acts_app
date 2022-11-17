@@ -1,5 +1,7 @@
 body {
-  max-width: 800px;
-  margin: 32px;
+  max-width: calc(min(80%, 800px));
+  margin: auto;
+  margin-top: 32px;
+  margin-bottom: 32px;
   font-family: sans-serif;
 }

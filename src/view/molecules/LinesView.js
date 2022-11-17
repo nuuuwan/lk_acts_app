@@ -6,7 +6,11 @@ const STYLE = {
 };
 
 export default function LinesView({ lines, sx }) {
-  lines = [lines.join(" ")];
+  let line = lines.join(" ");
+  if (!line) {
+    line = '...';
+  }
+  lines = [line];
   return (
     <Box sx={STYLE}>
       {lines.map(function (line, iLine) {

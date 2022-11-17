@@ -7,9 +7,7 @@ import ShowHide from "../../view/organisms/ShowHide";
 
 const STYLE_BOX = {
   margin: 1,
-  padding: 1,
-  background: "rgba(0,0,0,0.02)",
-  borderRadius: "12px",
+  padding: 1,  
 };
 
 export default function ActEntityView({ entity }) {

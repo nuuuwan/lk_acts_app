@@ -35,11 +35,13 @@ export default function ActEntityView({ entity }) {
           </Box>
         }
         contentShow={
-          <Box>
-            {entity.subEntities.map(function (subEntity, iSubEntity) {
-              return <ActEntityView key={iSubEntity} entity={subEntity} />;
-            })}
-          </Box>
+          entity.subEntities.length > 0 ? (
+            <Box>
+              {entity.subEntities.map(function (subEntity, iSubEntity) {
+                return <ActEntityView key={iSubEntity} entity={subEntity} />;
+              })}
+            </Box>
+          ) : null
         }
       />
     </Box>

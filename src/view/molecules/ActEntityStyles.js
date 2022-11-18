@@ -41,7 +41,7 @@ export default class ActEntityStyles {
     };
 
     if (
-      entity.entityTypeName !== "L0Part" ||
+      entity.entityTypeName !== "L0Part" &&
       entity.entityTypeName !== "L0Schedule"
     ) {
       style.marginLeft = 2;

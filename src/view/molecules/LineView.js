@@ -15,7 +15,7 @@ export default function LineView({ line, sx }) {
     speak({ text: line });
   };
 
-  const styleIcon = { color: sx.color, opacity: 0.1 };
+  const styleIcon = { color: sx.color, opacity: 0.2 };
   return (
     <Stack direction="row" sx={{ alignItems: "center" }}>
       <Typography variant="body1" sx={sx}>

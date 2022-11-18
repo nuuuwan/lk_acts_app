@@ -7,16 +7,32 @@ import Act from "../../nonview/core/Act";
 
 import ActEntityView from "../../view/molecules/ActEntityView";
 import ActIndexView from "../../view/molecules/ActIndexView";
+import ActPreContentView from "../../view/molecules/ActPreContentView";
+import ActTitleView from "../../view/molecules/ActTitleView";
 import CustomBottomNavigation from "../../view/molecules/CustomBottomNavigation";
 
-const STYLE_BOX_INNER = {
+const STYLE_BOX_HEADER = {
   position: "fixed",
-  bottom: 72,
   left: 0,
   right: 0,
   top: 0,
+  height: 36,
+  overflow: "scroll",
+  padding: 1,
+  background: "black",
+  color: "white",
+  zIndex: 1000,
+};
+
+const STYLE_BOX_INNER = {
+  position: "fixed",
+  bottom: 48,
+  left: 0,
+  right: 0,
+  top: 36,
   overflow: "scroll",
   padding: 3,
+  zIndex: 500,
 };
 
 export default class HomePage extends Component {
@@ -44,19 +60,29 @@ export default class HomePage extends Component {
 
   renderInner() {
     const { act, activeEntity } = this.state;
-    if (!act) {
-      return <CircularProgress />;
-    }
     if (activeEntity) {
       return <ActEntityView entity={activeEntity} showSubEntities={true} />;
     } else {
-      return <ActIndexView act={act} onClick={this.onClickEntity.bind(this)} />;
+      return (
+        <Box>
+          <ActPreContentView act={act} />
+          <ActIndexView act={act} onClick={this.onClickEntity.bind(this)} />
+        </Box>
+      );
     }
   }
 
   render() {
+    const { act } = this.state;
+    if (!act) {
+      return <CircularProgress />;
+    }
+
     return (
       <Box>
+        <Box sx={STYLE_BOX_HEADER}>
+          <ActTitleView act={act} />
+        </Box>
         <Box sx={STYLE_BOX_INNER} id="box-inner">
           {this.renderInner()}
         </Box>

@@ -45,7 +45,14 @@ export default class ActEntityStyles {
       entity.entityTypeName !== "L0Schedule"
     ) {
       style.marginLeft = 2;
+      style.marginTop = 1;
       style.marginBottom = 2;
+    }
+
+    if (entity.entityTypeName === "L1Section") {
+      style.borderRadius = "12px";
+      style.background = "rgba(0,0,0,0.02)";
+      style.padding = "6px";
     }
 
     return style;

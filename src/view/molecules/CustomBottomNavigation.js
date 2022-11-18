@@ -9,7 +9,7 @@ const STYLE = {
   bottom: 0,
   left: 0,
   right: 0,
-  height: 72,
+  height: 48,
 };
 
 const URL_APP = "https://nuuuwan.github.io/lk_acts_app/";

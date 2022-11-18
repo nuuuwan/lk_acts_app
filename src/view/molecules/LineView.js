@@ -11,7 +11,8 @@ export default function LineView({ line, sx }) {
   const showSpeaker = line.length > MIN_TEXT_FOR_SPEAKER;
   const { speak } = useSpeechSynthesis();
 
-  const onClick = function () {
+  const onClick = function (event) {
+    event.stopPropagation();
     speak({ text: line });
   };
 

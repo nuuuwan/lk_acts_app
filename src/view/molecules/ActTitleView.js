@@ -6,8 +6,8 @@ import LineView from "../../view/molecules/LineView";
 export default function ActTitleView({ act }) {
   return (
     <Box>
-      <LineView line={act.shortTitle} sx={{ fontSize: "200%" }} />
-      <Typography variant="h6">
+      <LineView line={act.shortTitle} sx={{ fontSize: "150%" }} />
+      <Typography variant="body1">
         Act No. {act.num} of {act.year}
       </Typography>
     </Box>

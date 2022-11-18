@@ -34,17 +34,16 @@ export default class Act {
     this.schedules = schedules;
   }
 
-
   get longTitle() {
-    return this.longTitleLines.join(' ');
+    return this.longTitleLines.join(" ");
   }
 
   get presentedBy() {
-    return this.presentedByLines.join(' ');
+    return this.presentedByLines.join(" ");
   }
 
   get preamble() {
-    return this.preambleLines.join(' ');
+    return this.preambleLines.join(" ");
   }
 
   static getJSONFileName(year, num, name) {

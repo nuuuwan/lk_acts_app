@@ -35,10 +35,7 @@ export default function ActPreContentView({ act }) {
           </Typography>
         }
         contentShow={
-          <LinesView
-            lines={[act.presentedBy]}
-            sx={STYLE_PRE_CONTENT_INNER}
-          />
+          <LinesView lines={[act.presentedBy]} sx={STYLE_PRE_CONTENT_INNER} />
         }
       />
       <ShowHide

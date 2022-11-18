@@ -19,7 +19,6 @@ export default function CustomBottomNavigation({ onClickIndex }) {
     localStorage.clear();
     window.location.reload();
     navigator.clipboard.writeText(URL_APP);
-    onClickIndex();
   };
 
   return (

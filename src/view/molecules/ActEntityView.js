@@ -3,20 +3,16 @@ import Typography from "@mui/material/Typography";
 
 import ActEntityStyles from "../../view/molecules/ActEntityStyles";
 import LinesView from "../../view/molecules/LinesView";
-import ShowHide from "../../view/organisms/ShowHide";
 
 const STYLE_SUBTITLE = {
   color: "gray",
 };
 
-export default function ActEntityView({ entity }) {
+export default function ActEntityView({ entity, showSubEntities, onClick }) {
   const sx = ActEntityStyles.getStyle(entity);
-  const show = !(
-    entity.entityTypeName === "L0Part" || entity.entityTypeName === "L0Schedule"
-  );
 
   const contentBase = (
-    <Box>
+    <Box onClick={onClick}>
       {entity.supertitle ? (
         <Typography variant="caption" sx={STYLE_SUBTITLE}>
           {entity.supertitle}
@@ -31,30 +27,24 @@ export default function ActEntityView({ entity }) {
     </Box>
   );
 
-  const contentShow = (
+  const contentShow = showSubEntities ? (
     <Box>
       {entity.subEntities.map(function (subEntity, iSubEntity) {
-        return <ActEntityView key={iSubEntity} entity={subEntity} />;
+        return (
+          <ActEntityView
+            key={iSubEntity}
+            entity={subEntity}
+            showSubEntities={true}
+          />
+        );
       })}
     </Box>
-  );
-
-  if (show) {
-    return (
-      <Box sx={sx}>
-        {contentBase}
-        {contentShow}
-      </Box>
-    );
-  }
+  ) : null;
 
   return (
     <Box sx={sx}>
-      <ShowHide
-        show={show}
-        contentBase={contentBase}
-        contentShow={contentShow}
-      />
+      {contentBase}
+      {contentShow}
     </Box>
   );
 }

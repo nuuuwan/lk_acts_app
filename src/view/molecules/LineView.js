@@ -5,7 +5,7 @@ import Stack from "@mui/material/Stack";
 import Typography from "@mui/material/Typography";
 import VolumeUpIcon from "@mui/icons-material/VolumeUp";
 
-const MIN_TEXT_FOR_SPEAKER = 5;
+const MIN_TEXT_FOR_SPEAKER = 30;
 
 export default function LineView({ line, sx }) {
   const showSpeaker = line.length > MIN_TEXT_FOR_SPEAKER;

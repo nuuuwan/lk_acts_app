@@ -18,9 +18,11 @@ export default class ActEntityStyles {
   static getColor(entity) {
     switch (entity.entityTypeName) {
       case "L0Part":
-      case "L0Schedule":
       case "L1Section":
         return "maroon";
+      case "L0Schedule":
+        return "orange";
+
       case "L2SubSection":
         return "orange";
       case "L3Paragraph":
@@ -35,26 +37,17 @@ export default class ActEntityStyles {
     let style = {
       color: ActEntityStyles.getColor(entity),
       fontSize: ActEntityStyles.getFontSize(entity),
-      marginLeft: 2,
-      marginRight: 0,
-      marginBottom: 1,
-      marginTop: 1,
+      margin: 0,
     };
 
     if (
-      entity.entityTypeName === "L0Part" ||
-      entity.entityTypeName === "L0Schedule" ||
-      entity.entityTypeName === "L1Section"
+      entity.entityTypeName !== "L0Part" ||
+      entity.entityTypeName !== "L0Schedule"
     ) {
-      style = {
-        ...style,
-        ...{
-          borderRadius: "12px",
-          background: "rgba(0,0,0,0.01)",
-          padding: 1,
-        },
-      };
+      style.marginLeft = 2;
+      style.marginBottom = 2;
     }
+
     return style;
   }
 }

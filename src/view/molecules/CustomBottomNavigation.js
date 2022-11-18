@@ -2,8 +2,7 @@ import * as React from "react";
 
 import BottomNavigation from "@mui/material/BottomNavigation";
 import BottomNavigationAction from "@mui/material/BottomNavigationAction";
-import ContentCopyIcon from "@mui/icons-material/ContentCopy";
-import RefreshIcon from "@mui/icons-material/Refresh";
+import ListIcon from "@mui/icons-material/List";
 
 const STYLE = {
   position: "fixed",
@@ -15,22 +14,17 @@ const STYLE = {
 
 const URL_APP = "https://nuuuwan.github.io/lk_acts_app/";
 
-export default function CustomBottomNavigation() {
-  const onClickRefresh = function () {
+export default function CustomBottomNavigation({ onClickIndex }) {
+  const onClickIndexInner = function () {
     localStorage.clear();
     window.location.reload();
+    navigator.clipboard.writeText(URL_APP);
+    onClickIndex();
   };
 
-  const onClickCopyLink = function () {
-    navigator.clipboard.writeText(URL_APP);
-  };
   return (
     <BottomNavigation sx={STYLE}>
-      <BottomNavigationAction icon={<RefreshIcon />} onClick={onClickRefresh} />
-      <BottomNavigationAction
-        icon={<ContentCopyIcon />}
-        onClick={onClickCopyLink}
-      />
+      <BottomNavigationAction icon={<ListIcon />} onClick={onClickIndexInner} />
     </BottomNavigation>
   );
 }

@@ -3,7 +3,7 @@ export default class AbstractActEntity {
     return [];
   }
 
-  get entityTypeName() {
+  get entityType() {
     return "AbstractActEntity";
   }
 

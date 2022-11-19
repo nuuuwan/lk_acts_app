@@ -14,7 +14,7 @@ export default class L3Paragraph extends AbstractActEntity {
     return this.subParagraphs;
   }
 
-  get entityTypeName() {
+  get entityType() {
     return ENTITY_TYPES.L3Paragraph;
   }
 

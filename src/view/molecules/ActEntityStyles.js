@@ -2,7 +2,7 @@ import ENTITY_TYPES from "../../nonview/core/ENTITY_TYPES";
 
 export default class ActEntityStyles {
   static getFontSize(entity) {
-    switch (entity.entityTypeName) {
+    switch (entity.entityType) {
       case ENTITY_TYPES.L0Part:
       case ENTITY_TYPES.L0Schedule:
       case ENTITY_TYPES.L1Section:
@@ -18,7 +18,7 @@ export default class ActEntityStyles {
   }
 
   static getColor(entity) {
-    switch (entity.entityTypeName) {
+    switch (entity.entityType) {
       case ENTITY_TYPES.L0Part:
       case ENTITY_TYPES.L1Section:
         return "maroon";
@@ -43,15 +43,15 @@ export default class ActEntityStyles {
     };
 
     if (
-      entity.entityTypeName !== ENTITY_TYPES.L0Part &&
-      entity.entityTypeName !== ENTITY_TYPES.L0Schedule
+      entity.entityType !== ENTITY_TYPES.L0Part &&
+      entity.entityType !== ENTITY_TYPES.L0Schedule
     ) {
       style.marginLeft = 2;
       style.marginTop = 1;
       style.marginBottom = 2;
     }
 
-    if (entity.entityTypeName === ENTITY_TYPES.L1Section) {
+    if (entity.entityType === ENTITY_TYPES.L1Section) {
       style.borderRadius = "12px";
       style.background = "rgba(0,0,0,0.02)";
       style.padding = "6px";

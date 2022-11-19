@@ -8,7 +8,7 @@ export default class L4SubParagraph extends AbstractActEntity {
     this.textLines = textLines;
   }
 
-  get entityTypeName() {
+  get entityType() {
     return ENTITY_TYPES.L4SubParagraph;
   }
 

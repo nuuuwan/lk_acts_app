@@ -57,22 +57,23 @@ export default class HomePage extends Component {
     this.setState({ activeEntity: null });
   }
 
-  renderInner() {
-    const { act, activeEntity } = this.state;
-    if (activeEntity) {
-      return <ActEntityView entity={activeEntity} showSubEntities={true} />;
-    } else {
-      return (
-        <Box>
-          <ActPreContentView act={act} />
-          <ActIndexView act={act} onClick={this.onClickEntity.bind(this)} />
-        </Box>
-      );
-    }
+  renderIndex() {
+    const { act } = this.state;
+    return (
+      <Box>
+        <ActPreContentView act={act} />
+        <ActIndexView act={act} onClick={this.onClickEntity.bind(this)} />
+      </Box>
+    );
+  }
+
+  renderEntity() {
+    const { activeEntity } = this.state;
+    return <ActEntityView entity={activeEntity} showSubEntities={true} />;
   }
 
   render() {
-    const { act } = this.state;
+    const { act, activeEntity } = this.state;
     if (!act) {
       return <CircularProgress />;
     }
@@ -83,7 +84,7 @@ export default class HomePage extends Component {
           <ActTitleView act={act} />
         </Box>
         <Box sx={STYLE_BOX_INNER} id="box-inner">
-          {this.renderInner()}
+          {activeEntity ? this.renderEntity() : this.renderIndex()}
         </Box>
         <CustomBottomNavigation onClickIndex={this.onClickIndex.bind(this)} />
       </Box>

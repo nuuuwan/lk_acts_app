@@ -46,6 +46,10 @@ export default class Act {
     return this.preambleLines.join(" ");
   }
 
+  get indexEntities() {
+    return [].concat(this.parts, this.schedules);
+  }
+
   static getJSONFileName(year, num, name) {
     return `${year}-${num}-${name}/data.json`;
   }

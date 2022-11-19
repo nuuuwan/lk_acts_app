@@ -12,13 +12,9 @@ const STYLE = {
   height: 48,
 };
 
-const URL_APP = "https://nuuuwan.github.io/lk_acts_app/";
-
 export default function CustomBottomNavigation({ onClickIndex }) {
   const onClickIndexInner = function () {
-    localStorage.clear();
-    window.location.reload();
-    navigator.clipboard.writeText(URL_APP);
+    onClickIndex();
   };
 
   return (

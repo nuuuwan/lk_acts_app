@@ -29,7 +29,7 @@ const STYLE_BOX_BODY = {
   left: 0,
   right: 0,
   top: 36,
-  bottom: 72,  
+  bottom: 72,
   overflow: "scroll",
   padding: 3,
   zIndex: 500,

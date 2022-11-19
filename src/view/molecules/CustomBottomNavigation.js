@@ -38,7 +38,7 @@ export default function CustomBottomNavigation({
   };
 
   const styleButton = function (disabled) {
-    return { opacity: disabled ? 0.2 : 1 , color: 'white'};
+    return { opacity: disabled ? 0.2 : 1, color: "white" };
   };
 
   return (

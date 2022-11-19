@@ -8,12 +8,12 @@ const STYLE = { margin: 0, padding: 0 };
 export default function ActIndexView({ act, onClick }) {
   return (
     <List sx={STYLE}>
-      {act.indexEntities.map(function (entity, iEntity) {
+      {act.indexEntities.map(function (entity, entityIndex) {
         const onClickInner = function () {
-          onClick(entity);
+          onClick(entityIndex);
         };
         return (
-          <ListItem key={"entity-" + iEntity} sx={STYLE}>
+          <ListItem key={"entity-" + entityIndex} sx={STYLE}>
             <ListItemButton onClick={onClickInner}>
               <ActEntityView entity={entity} showSubEntities={false} />
             </ListItemButton>

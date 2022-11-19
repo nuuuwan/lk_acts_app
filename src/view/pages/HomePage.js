@@ -38,7 +38,7 @@ const STYLE_BOX_INNER = {
 export default class HomePage extends Component {
   constructor(props) {
     super(props);
-    this.state = { act: null, activeEntity: null };
+    this.state = { act: null, activeEntityIndex: null };
   }
 
   async componentDidMount() {
@@ -46,15 +46,14 @@ export default class HomePage extends Component {
     this.setState({ act });
   }
 
-  onClickEntity(entity) {
+  onClickEntity(entityIndex) {
     const boxInner = document.getElementById("box-inner");
     boxInner.scrollTop = 0;
-
-    this.setState({ activeEntity: entity });
+    this.setState({ activeEntityIndex: entityIndex });
   }
 
   onClickIndex() {
-    this.setState({ activeEntity: null });
+    this.setState({ activeEntityIndex: null });
   }
 
   renderIndex() {
@@ -68,12 +67,13 @@ export default class HomePage extends Component {
   }
 
   renderEntity() {
-    const { activeEntity } = this.state;
+    const { act, activeEntityIndex } = this.state;
+    const activeEntity = act.indexEntities[activeEntityIndex];
     return <ActEntityView entity={activeEntity} showSubEntities={true} />;
   }
 
   render() {
-    const { act, activeEntity } = this.state;
+    const { act, activeEntityIndex } = this.state;
     if (!act) {
       return <CircularProgress />;
     }
@@ -84,7 +84,7 @@ export default class HomePage extends Component {
           <ActTitleView act={act} />
         </Box>
         <Box sx={STYLE_BOX_INNER} id="box-inner">
-          {activeEntity ? this.renderEntity() : this.renderIndex()}
+          {activeEntityIndex ? this.renderEntity() : this.renderIndex()}
         </Box>
         <CustomBottomNavigation onClickIndex={this.onClickIndex.bind(this)} />
       </Box>

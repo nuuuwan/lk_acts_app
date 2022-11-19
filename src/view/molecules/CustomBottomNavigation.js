@@ -2,7 +2,7 @@ import * as React from "react";
 
 import BottomNavigation from "@mui/material/BottomNavigation";
 import BottomNavigationAction from "@mui/material/BottomNavigationAction";
-import ListIcon from "@mui/icons-material/List";
+import MenuIcon from "@mui/icons-material/Menu";
 import SkipNextIcon from "@mui/icons-material/SkipNext";
 import SkipPreviousIcon from "@mui/icons-material/SkipPrevious";
 
@@ -49,7 +49,7 @@ export default function CustomBottomNavigation({
         sx={styleButton(disableIndexButton)}
       />
       <BottomNavigationAction
-        icon={<ListIcon />}
+        icon={<MenuIcon />}
         onClick={onClickIndexInner}
         disabled={disablePreviousButton}
         sx={styleButton(disablePreviousButton)}

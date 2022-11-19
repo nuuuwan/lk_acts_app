@@ -1,7 +1,0 @@
-body {
-  max-width: calc(min(95%, 900px));
-  margin: auto;
-  margin-top: 32px;
-  margin-bottom: 32px;
-  font-family: sans-serif;
-}

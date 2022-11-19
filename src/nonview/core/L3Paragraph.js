@@ -1,4 +1,5 @@
 import AbstractActEntity from "../../nonview/core/AbstractActEntity";
+import ENTITY_TYPES from "../../nonview/core/ENTITY_TYPES";
 import L4SubParagraph from "../../nonview/core/L4SubParagraph";
 
 export default class L3Paragraph extends AbstractActEntity {
@@ -14,7 +15,7 @@ export default class L3Paragraph extends AbstractActEntity {
   }
 
   get entityTypeName() {
-    return "L3Paragraph";
+    return ENTITY_TYPES.L3Paragraph;
   }
 
   get num() {

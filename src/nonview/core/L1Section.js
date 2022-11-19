@@ -1,4 +1,5 @@
 import AbstractActEntity from "../../nonview/core/AbstractActEntity";
+import ENTITY_TYPES from "../../nonview/core/ENTITY_TYPES";
 import L2SubSection from "../../nonview/core/L2SubSection";
 
 export default class L1Section extends AbstractActEntity {
@@ -15,7 +16,7 @@ export default class L1Section extends AbstractActEntity {
   }
 
   get entityTypeName() {
-    return "L1Section";
+    return ENTITY_TYPES.L1Section;
   }
 
   get num() {

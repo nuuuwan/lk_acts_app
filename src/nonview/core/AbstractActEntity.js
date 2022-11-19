@@ -24,9 +24,6 @@ export default class AbstractActEntity {
       return [];
     }
     if (!this.num) {
-      if (this.entityTypeName === "L0Part") {
-        return ["Introduction"];
-      }
       return ["..."];
     }
     return [this.numFormatted + " " + this.textLinesOnly.join(" ")];

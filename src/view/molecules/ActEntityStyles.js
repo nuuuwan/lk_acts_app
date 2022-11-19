@@ -54,7 +54,7 @@ export default class ActEntityStyles {
     if (entity.entityType === ENTITY_TYPES.L1Section) {
       style.borderRadius = "12px";
       style.background = "rgba(0,0,0,0.02)";
-      style.padding = "6px";
+      style.padding = "12px";
     }
 
     return style;

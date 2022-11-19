@@ -23,7 +23,7 @@ export default class AbstractActEntity {
     if (this.num === "dummy") {
       return [];
     }
-    if (!this.num) {
+    if (this.num === null) {
       return ["..."];
     }
     return [this.numFormatted + " " + this.textLinesOnly.join(" ")];

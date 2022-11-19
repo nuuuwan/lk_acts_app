@@ -86,7 +86,12 @@ export default class HomePage extends Component {
         <Box sx={STYLE_BOX_INNER} id="box-inner">
           {activeEntityIndex ? this.renderEntity() : this.renderIndex()}
         </Box>
-        <CustomBottomNavigation onClickIndex={this.onClickIndex.bind(this)} />
+        <CustomBottomNavigation
+          nEntities={act.indexEntities.length}
+          activeEntityIndex={activeEntityIndex}
+          onClickIndex={this.onClickIndex.bind(this)}
+          onClickEntity={this.onClickEntity.bind(this)}
+        />
       </Box>
     );
   }

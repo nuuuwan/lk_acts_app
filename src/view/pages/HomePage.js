@@ -26,10 +26,10 @@ const STYLE_BOX_HEADER = {
 
 const STYLE_BOX_BODY = {
   position: "fixed",
-  bottom: 48,
   left: 0,
   right: 0,
   top: 36,
+  bottom: 72,  
   overflow: "scroll",
   padding: 3,
   zIndex: 500,
@@ -88,8 +88,8 @@ export default class HomePage extends Component {
         <Box sx={STYLE_BOX_HEADER}>
           <ActTitleView act={act} />
         </Box>
-        <Box sx={STYLE_BOX_BODY}>
-          <Box sx={STYLE_BOX_BODY_INNER} id="body-inner">
+        <Box sx={STYLE_BOX_BODY} id="body-inner">
+          <Box sx={STYLE_BOX_BODY_INNER}>
             {activeEntityIndex ? this.renderEntity() : this.renderIndex()}
           </Box>
         </Box>

@@ -11,7 +11,8 @@ const STYLE = {
   bottom: 0,
   left: 0,
   right: 0,
-  height: 48,
+  height: 72,
+  background: "black",
 };
 
 export default function CustomBottomNavigation({
@@ -37,7 +38,7 @@ export default function CustomBottomNavigation({
   };
 
   const styleButton = function (disabled) {
-    return { opacity: disabled ? 0.1 : 1 };
+    return { opacity: disabled ? 0.2 : 1 , color: 'white'};
   };
 
   return (

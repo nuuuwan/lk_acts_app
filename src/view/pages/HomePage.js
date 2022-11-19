@@ -48,7 +48,6 @@ export default class HomePage extends Component {
 
   onClickEntity(entity) {
     const boxInner = document.getElementById("box-inner");
-    console.debug(boxInner);
     boxInner.scrollTop = 0;
 
     this.setState({ activeEntity: entity });

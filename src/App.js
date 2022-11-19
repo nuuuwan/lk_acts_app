@@ -14,7 +14,7 @@ const THEME = createTheme({
     },
   },
   typography: {
-    fontFamily: ["Assistant", "sans-serif"].join(","),
+    fontFamily: ["Zen Kaku Gothic New", "sans-serif"].join(","),
     fontSize: 13,
   },
 });

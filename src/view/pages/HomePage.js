@@ -90,7 +90,9 @@ export default class HomePage extends Component {
         </Box>
         <Box sx={STYLE_BOX_BODY} id="body-inner">
           <Box sx={STYLE_BOX_BODY_INNER}>
-            {activeEntityIndex ? this.renderEntity() : this.renderIndex()}
+            {activeEntityIndex !== null
+              ? this.renderEntity()
+              : this.renderIndex()}
           </Box>
         </Box>
         <CustomBottomNavigation

@@ -26,15 +26,23 @@ export default function CustomBottomNavigation({
     onClickIndex();
   };
 
-  const disablePreviousButton = !activeEntityIndex || activeEntityIndex === 0;
+  const disablePreviousButton = activeEntityIndex === null;
   const onClickPrevious = function () {
-    onClickEntity(activeEntityIndex - 1);
+    if (activeEntityIndex === 0) {
+      onClickIndex();
+    } else {
+      onClickEntity(activeEntityIndex - 1);
+    }
   };
 
   const disableNextButton =
-    activeEntityIndex && activeEntityIndex === nEntities - 1;
+    activeEntityIndex !== null && activeEntityIndex === nEntities - 1;
   const onClickNext = function () {
-    onClickEntity(activeEntityIndex + 1);
+    if (activeEntityIndex === null) {
+      onClickEntity(0);
+    } else {
+      onClickEntity(activeEntityIndex + 1);
+    }
   };
 
   const styleButton = function (disabled) {
@@ -46,14 +54,14 @@ export default function CustomBottomNavigation({
       <BottomNavigationAction
         icon={<SkipPreviousIcon />}
         onClick={onClickPrevious}
-        disabled={disableIndexButton}
-        sx={styleButton(disableIndexButton)}
+        disabled={disablePreviousButton}
+        sx={styleButton(disablePreviousButton)}
       />
       <BottomNavigationAction
         icon={<MenuIcon />}
         onClick={onClickIndexInner}
-        disabled={disablePreviousButton}
-        sx={styleButton(disablePreviousButton)}
+        disabled={disableIndexButton}
+        sx={styleButton(disableIndexButton)}
       />
       <BottomNavigationAction
         icon={<SkipNextIcon />}

@@ -3,7 +3,7 @@ import { useSpeechSynthesis } from "react-speech-kit";
 import IconButton from "@mui/material/IconButton";
 import Stack from "@mui/material/Stack";
 import Typography from "@mui/material/Typography";
-import VolumeUpIcon from "@mui/icons-material/VolumeUp";
+import PlayArrowIcon from "@mui/icons-material/PlayArrow";
 
 const MIN_TEXT_FOR_SPEAKER = 30;
 
@@ -24,7 +24,7 @@ export default function LineView({ line, sx }) {
       </Typography>
       {showSpeaker ? (
         <IconButton onClick={onClick} size="small">
-          <VolumeUpIcon sx={styleIcon} />
+          <PlayArrowIcon sx={styleIcon} />
         </IconButton>
       ) : null}
     </Stack>

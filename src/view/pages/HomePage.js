@@ -24,7 +24,7 @@ const STYLE_BOX_HEADER = {
   zIndex: 1000,
 };
 
-const STYLE_BOX_INNER = {
+const STYLE_BOX_BODY = {
   position: "fixed",
   bottom: 48,
   left: 0,
@@ -33,6 +33,11 @@ const STYLE_BOX_INNER = {
   overflow: "scroll",
   padding: 3,
   zIndex: 500,
+};
+
+const STYLE_BOX_BODY_INNER = {
+  width: "calc(min(800px, 95%))",
+  margin: "auto",
 };
 
 export default class HomePage extends Component {
@@ -47,7 +52,7 @@ export default class HomePage extends Component {
   }
 
   onClickEntity(entityIndex) {
-    const boxInner = document.getElementById("box-inner");
+    const boxInner = document.getElementById("body-inner");
     boxInner.scrollTop = 0;
     this.setState({ activeEntityIndex: entityIndex });
   }
@@ -83,8 +88,10 @@ export default class HomePage extends Component {
         <Box sx={STYLE_BOX_HEADER}>
           <ActTitleView act={act} />
         </Box>
-        <Box sx={STYLE_BOX_INNER} id="box-inner">
-          {activeEntityIndex ? this.renderEntity() : this.renderIndex()}
+        <Box sx={STYLE_BOX_BODY}>
+          <Box sx={STYLE_BOX_BODY_INNER} id="body-inner">
+            {activeEntityIndex ? this.renderEntity() : this.renderIndex()}
+          </Box>
         </Box>
         <CustomBottomNavigation
           nEntities={act.indexEntities.length}
